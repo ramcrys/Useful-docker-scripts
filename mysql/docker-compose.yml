@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+   db:
+     image: mysql/mysql-server:5.7
+     container_name: mysql1
+     restart: 'always'
+     environment:
+       MYSQL_ROOT_HOST: '%'
+       MYSQL_ROOT_PASSWORD: "test2"
+     ports:
+       - "13306:3306"
+     volumes:
+       - ./containerdata/my.cnf:/etc/my.cnf
