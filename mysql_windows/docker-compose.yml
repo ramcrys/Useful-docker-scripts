@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+   db:
+     build: ./builds
+     container_name: mysql1
+     environment:
+       MYSQL_ROOT_HOST: '%'
+       MYSQL_ROOT_PASSWORD: "test2"
+     ports:
+       - "13306:3306"
+     volumes:
+       - ./containerdata:/etc/mysql/conf.d/temp
